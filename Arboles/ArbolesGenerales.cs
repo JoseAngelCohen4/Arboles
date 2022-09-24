@@ -16,11 +16,11 @@ namespace Arboles
         }
 
         public Nodo Raiz
-        { 
-            get 
+        {
+            get
             {
                 return raiz;
-            } 
+            }
         }
         public Nodo Insertar(string valor, Nodo padre)
         {
@@ -42,7 +42,7 @@ namespace Arboles
             else
             {
                 Nodo hijoActual = padre.Hijo;
-                while(hijoActual.Hermano != null)
+                while (hijoActual.Hermano != null)
                 {
                     hijoActual = hijoActual.Hermano;
                 }
@@ -68,7 +68,24 @@ namespace Arboles
                 if (nodo.Hermano != null && posicion != 0)
                 {
                     Recorrer(nodo.Hermano, ref posicion, ref datos);
+                    
                 }
-            }        }
+            }
+        }
+
+        public string ObtenerArbol(Nodo nodo = null)
+        {
+            if (nodo == null)
+            {
+                nodo = raiz;
+            }
+            int posicion = 0;
+            string datos = string.Empty;
+
+            Recorrer(nodo, ref posicion, ref datos);
+            return datos;
+        }
     }
 }
+    
+

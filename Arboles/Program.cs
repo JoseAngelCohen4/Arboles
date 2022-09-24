@@ -24,6 +24,9 @@ namespace Arboles
                 Nodo nodoG = arbol.Insertar("G", nodoC);
                 Nodo nodoH = arbol.Insertar("H", nodoC);
                 Nodo nodoL = arbol.Insertar("L", nodoH);
+                string miArbol = arbol.ObtenerArbol();
+                Console.WriteLine(miArbol);
+                Console.ReadKey();
             }
             catch (Exception ex)
             {
